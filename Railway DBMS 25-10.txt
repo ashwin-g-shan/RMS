@@ -1,0 +1,107 @@
+Tables to be created 7 
+
+CREATE DATABASE RAILWAY;
+USE RAILWAY;
+
+
+
+CREATE TABLE `Account` (
+`Username` varchar(15) NOT NULL,
+`Password` varchar(20) NOT NULL,
+`Email_Id` varchar(35) NOT NULL,
+`Address` varchar(50) DEFAULT NULL,
+PRIMARY KEY (`Username`)
+);
+
+
+
+
+CREATE TABLE `Contact` (
+`Username` varchar(15) NOT NULL DEFAULT '',
+`Phone_No` char(10) NOT NULL DEFAULT '',
+PRIMARY KEY (`Username`,`Phone_No`),
+CONSTRAINT `Contact_ibfk_1` FOREIGN KEY (`Username`) REFERENCES `Account`
+(`Username`) ON DELETE CASCADE
+) ;
+
+
+
+
+CREATE TABLE `Passenger` (
+`Passenger_Id` int(11) NOT NULL AUTO_INCREMENT,
+`First_Name` varchar(20) NOT NULL,
+`Last_Name` varchar(20) NOT NULL,
+`Gender` char(1) NOT NULL,
+`Phone_No` char(10) DEFAULT NULL,
+`Ticket_No` int(10) NOT NULL,
+`Age` int(11) NOT NULL,
+`Class` varchar(20) NOT NULL,
+PRIMARY KEY (`Passenger_Id`),
+KEY `Ticket_No` (`Ticket_No`),
+CONSTRAINT `Passenger_ibfk_1` FOREIGN KEY (`Ticket_No`) REFERENCES `Ticket`
+(`Ticket_No`) ON DELETE CASCADE
+);
+
+
+
+
+CREATE TABLE `Station` (
+`Station_Code` char(5) NOT NULL DEFAULT '',
+`Station_Name` varchar(25) NOT NULL,
+PRIMARY KEY (`Station_Code`)
+);
+
+
+
+
+CREATE TABLE `Stoppage` (
+`Train_No` int(6) NOT NULL DEFAULT '0',
+`Station_Code` char(5) NOT NULL DEFAULT '',
+`Arrival_Time` time DEFAULT NULL,
+`Departure_Time` time DEFAULT NULL,
+PRIMARY KEY (`Train_No`,`Station_Code`),
+KEY `Station_Code` (`Station_Code`),
+CONSTRAINT `Stoppage_ibfk_1` FOREIGN KEY (`Train_No`) REFERENCES `Train`
+(`Train_No`) ON DELETE CASCADE ON UPDATE CASCADE,
+CONSTRAINT `Stoppage_ibfk_2` FOREIGN KEY (`Station_Code`) REFERENCES
+`Station` (`Station_Code`) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+
+
+
+CREATE TABLE `Ticket` (
+`Ticket_No` int(10) NOT NULL AUTO_INCREMENT,
+`Train_No` int(6) NOT NULL,
+`Date_of_Journey` date NOT NULL,
+`Username` varchar(15) NOT NULL,
+PRIMARY KEY (`Ticket_No`),
+KEY `Username` (`Username`),
+KEY `Train_No` (`Train_No`),
+CONSTRAINT `Ticket_ibfk_1` FOREIGN KEY (`Username`) REFERENCES `Account`
+(`Username`) ON DELETE CASCADE,
+CONSTRAINT `Ticket_ibfk_2` FOREIGN KEY (`Train_No`) REFERENCES `Train`
+(`Train_No`) ON UPDATE CASCADE
+);
+
+
+
+
+CREATE TABLE `Train` (
+`Train_No` int(6) NOT NULL DEFAULT '0',
+`Name` varchar(25) NOT NULL,
+`Seat_Sleeper` int(4) NOT NULL,
+`Seat_First_Class_AC` int(4) NOT NULL,
+`Seat_Second_Class_AC` int(4) NOT NULL,
+`Seat_Third_Class_AC` int(4) NOT NULL,
+ PRIMARY KEY (`Train_No`)
+);
+
+
+
+
+
+Note: I have ran it in my workbench.
+** please try it out guys one by one.
+
+IF any ambiguities , every one can "quote" and edit.
