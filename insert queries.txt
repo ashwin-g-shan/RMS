@@ -1,0 +1,101 @@
+INSERT INTO `Account` VALUES 
+('hariprasad10','prasad@1024','hariprasad@nitte.edu','Old airport road,bangalore'),
+('ramesh','spiderman','ram123@gmail.com','beejai,Manglore'),
+('ramakrishna','Krishna456','ramakrishna95@gmail.com','near chennama circle,Hubli'),
+('preetesh12','preet@008','preet.esh98@gmail.com','near raghavendra circle, Sirsi'),
+('gokul448','gokul@1203','gokul@gmail.com','kankanadi,Manglore'),
+('prateek1996','ronaldoisgreat','prateek@gmail.com','hassan'),
+('neha333','nehap@1998','neha.p234@yahoo.in','behind canara bank,Bhatkal');
+
+INSERT INTO `Contact` VALUES 
+('hariprasad10','8899887766'),
+('ramesh','7071475390'),
+('ramakrishna','9650367698'),
+('preetesh12','8989786765'),
+('gokul448','9989786756'),
+('prateek1996','9898342565'),
+('neha333','7071475390');
+
+INSERT INTO `Station` VALUES 
+('KAR','KARWAR'),
+('MCN','MANGLORE CENTRAL'),
+('BTK','BHATKAL'),
+('HSN','HASSAN'),
+('BLR','BANGALORE'),
+('YAP','YASHVANT-PURA'),
+('MAO','MADGAON'),
+('CSTM','Mumbai Cst'),
+('DR','Dadar'),
+('TNA','Thane'),
+('PNVL','Panvel'),
+('RN','Ratnagiri'),
+('SNDD','Sindhudurg'),
+('KRMI','Karmali'),
+('BIDR','Bidar'),
+('ZB','Zahirabad'),
+('VKB','Vikarabad Junction'),
+('LPI','Lingampalli'),
+('BMT','Begampet'),
+
+('DVG','Davangere'),
+('HRR','Harihar'),
+('HVR','Haveri'),
+('UBL','Hubballi Junction'),
+('DWR','Dharwad'),
+('BGM','Belagavi');
+
+INSERT INTO Passenger values 
+('1','SAMEERA','R','F','9199834521','1','20','first class ac'),
+('2','RAMESH','RAO','M','9196334562','2','30','first class ac'),
+('3','RAJESH','KUMAR','M','9941835530','32','45','second class ac'),
+('4','KARAN','SHETTY','M','8864182938','23','78','second class ac'),
+('5','YASHASWI','RAO','F','8164981328','105','28','first class ac'),
+('6','SHRIVATSA','KAMATH','M','9876853341','38','34','third class ac'),
+('7','HARSHAL','KHORE','M','8745699245','85','19','first class ac'),
+('8','SAVITHA','SHETTY','F','8864182938','56','56','second class ac'),
+('9','ANANYA','RAGHUVEER','F','8845180467','28','67','first class ac'),
+('10','GARIMA','KHURESHI','F','8856433121','39','46','third class ac');
+
+INSERT INTO `Train` VALUES 
+(12559,'Nizamuddin EXP',479,47,96,192),
+(12560,'lokmanya-tilak EXP',480,43,96,192),
+(12581,'Duronto EXP',432,48,80,144,),
+(12582,'Rajdhani EXP',432,48,80,144,);
+
+INSERT INTO `Stoppage` VALUES 
+(12559,'KAR',NULL,'22:30:00'),
+(12559,'BTK','01:30:00','01:38:00'),
+(12559,'MCN','19:20:00','19:30:00'),
+(12559,'YAP','08:10:00',NULL),
+(12560,'CSTM',NULL,'23:05:00'),
+(12560,'DR','23:18:00','23:20:00'),
+(12560,'PNVL','00:25:00','00:30:00'),
+(12560,'RN','05:25:00','05:30:00'),
+(12560,'SNDD','07:38:00','07:39:00'),
+(12560,'KRMI','09:27:00','09:28:00'),
+(12560,'TNA',23:43:00,'23:45:00'),
+(12560,'MAO','10:45:00',NULL),
+(12581,'BIDR',NULL,'07:00:00'),
+(12581,'ZB','07:20:00','07:21:00'),
+(12581,'VKB','08:25:00','08:27:00'),
+(12581,'LPI','09:31:00','09:32:00'),
+(12581,'BMT','09:50:00','09:51:00'),
+(12581,'HYB','10:25:00',NULL),
+(12582,'DVG',NULL,'03:10:00'),
+(12582,'HRR','03:28:00','03:30:00'),
+(12582,'HVR','04:23:00','04:25:00'),
+(12582,'UBL','06:25:00','06:35:00'),
+(12582,'DWR','06:58:00','07:00:00'),
+(12582,'BGM','09:38:00',NULL);
+
+INSERT INTO `Ticket` VALUES 
+(1,12559,'2020/11/09','hariprasad10'),
+(2,12581,'2020/12/19','ramesh'),
+(32,12560,'2020/11/15','gokul448'),
+(23,12582,'2020/12/30','neha333'),
+(105,12581,'2020/12/19','ramesh'),
+(38,12581,'2020/11/28','prateek1996'),
+(85,12560,'2020/12/23','ramakrishna'),
+(56,12582,'2020/12/30','neha333'),
+(28,12559,'2020/11/15',''preetesh12'),
+(39,12560,'2020/12/30',''preetesh12');
